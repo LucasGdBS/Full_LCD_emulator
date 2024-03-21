@@ -9,7 +9,8 @@ h1 {
 
 .main-box {
   width: 95%;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -27,9 +28,10 @@ h1 {
   justify-content: space-around;
 }
 
-.pix-pic-box {
+.pix-pic-box { /*Linhas do lcd*/
+  align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   width: 100%;
 }
 
@@ -39,13 +41,6 @@ h1 {
   width: 5%;
   padding: 10px;
 }
-
-/* .dot-px {
-  width: 100%;
-  margin: 2px;
-  border: #fff 1px solid;
-  display: inline-block;
-} */
 
 .dot-px {
   width: 0.75vw;
@@ -69,7 +64,7 @@ h1 {
 }
 
 .button {
-  display: inline-block;
+  display: flex;
   font-weight: 400;
   background-color: #007bbf;
   text-align: center;
@@ -91,4 +86,13 @@ h1 {
   color: #fff;
   background-color: #022e5d;
   border-color: #022e5d;
+}
+
+@media screen and (max-width: 1100px){
+  .button{
+    font-size: 0.9rem;
+  }
+  h1{
+    font-size: x-large;
+  }
 }

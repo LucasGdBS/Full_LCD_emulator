@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Emulador de LCD</title>
+  </head>
+  <body>
+    <h1>Emulador LCD</h1>
+    <div class="main-box">
+      <div class="pix-pic-box" id="first-line">
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+      </div>
+      <div class="pix-pic-box" id="second-line">
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+        <div class="pix-box green">
+          <div class="colum">
+            <div class="dot-px" data-x="0" data-y="0"></div>
+            <div class="dot-px" data-x="0" data-y="1"></div>
+            <div class="dot-px" data-x="0" data-y="2"></div>
+            <div class="dot-px" data-x="0" data-y="3"></div>
+            <div class="dot-px" data-x="0" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="1" data-y="0"></div>
+            <div class="dot-px" data-x="1" data-y="1"></div>
+            <div class="dot-px" data-x="1" data-y="2"></div>
+            <div class="dot-px" data-x="1" data-y="3"></div>
+            <div class="dot-px" data-x="1" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="2" data-y="0"></div>
+            <div class="dot-px" data-x="2" data-y="1"></div>
+            <div class="dot-px" data-x="2" data-y="2"></div>
+            <div class="dot-px" data-x="2" data-y="3"></div>
+            <div class="dot-px" data-x="2" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="3" data-y="0"></div>
+            <div class="dot-px" data-x="3" data-y="1"></div>
+            <div class="dot-px" data-x="3" data-y="2"></div>
+            <div class="dot-px" data-x="3" data-y="3"></div>
+            <div class="dot-px" data-x="3" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="4" data-y="0"></div>
+            <div class="dot-px" data-x="4" data-y="1"></div>
+            <div class="dot-px" data-x="4" data-y="2"></div>
+            <div class="dot-px" data-x="4" data-y="3"></div>
+            <div class="dot-px" data-x="4" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="5" data-y="0"></div>
+            <div class="dot-px" data-x="5" data-y="1"></div>
+            <div class="dot-px" data-x="5" data-y="2"></div>
+            <div class="dot-px" data-x="5" data-y="3"></div>
+            <div class="dot-px" data-x="5" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="6" data-y="0"></div>
+            <div class="dot-px" data-x="6" data-y="1"></div>
+            <div class="dot-px" data-x="6" data-y="2"></div>
+            <div class="dot-px" data-x="6" data-y="3"></div>
+            <div class="dot-px" data-x="6" data-y="4"></div>
+          </div>
+          <div class="colum">
+            <div class="dot-px" data-x="7" data-y="0"></div>
+            <div class="dot-px" data-x="7" data-y="1"></div>
+            <div class="dot-px" data-x="7" data-y="2"></div>
+            <div class="dot-px" data-x="7" data-y="3"></div>
+            <div class="dot-px" data-x="7" data-y="4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

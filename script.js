@@ -114,6 +114,18 @@ button.forEach((botao) => {
   });
 });
 
+// Aplicar Letras com Enter
+const input = document.querySelectorAll("input");
+
+input.forEach((input) => {
+  input.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      let buttonFather = input.parentNode;
+      buttonFather.querySelector("#apply").click();
+    }
+  });
+});
+
 const chars = {
   " ": function () {
     document.querySelectorAll(".dot-px").forEach((pix) => {

@@ -6,7 +6,6 @@ pixboxgreen.forEach((div) => {
   copybutton.innerHTML = "📑";
   copybutton.id = "code-generate";
   copybutton.classList.add("send-button");
-  copybutton.classList.add("copy-button");
   if (div.parentNode.id == "first-line") {
     div.insertBefore(copybutton, div.firstChild);
   } else {

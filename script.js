@@ -41,7 +41,7 @@ button.forEach((botao) => {
       let buttonFather = pressedButton.parentNode;
       let input = buttonFather.querySelector("input");
 
-      let pixs = buttonFather.querySelectorAll('.dot-px').forEach((pix) => {
+      let pixs = buttonFather.querySelectorAll(".dot-px").forEach((pix) => {
         pix.classList.remove("high");
       });
 
@@ -59,6 +59,13 @@ button.forEach((botao) => {
 });
 
 const chars = {
+  ' ':
+  function () {
+    document.querySelectorAll(".dot-px").forEach((pix) => {
+      pix.classList.remove("high");
+    });
+  },
+
   0: [
     [0, 1],
     [0, 2],
@@ -442,10 +449,11 @@ const chars = {
     [3, 0],
     [4, 0],
     [5, 0],
-    [5, 1],
-    [5, 2],
-    [5, 3],
-    [5, 4],
+    [6, 0],
+    [6, 1],
+    [6, 2],
+    [6, 3],
+    [6, 4],
   ],
   M: [
     [0, 0],

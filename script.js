@@ -3,7 +3,7 @@ const pixboxgreen = document.querySelectorAll(".pix-box");
 
 pixboxgreen.forEach((div) => {
   let copybutton = document.createElement("button");
-  copybutton.innerHTML = "📑";
+  copybutton.innerHTML = "📑Copy";
   copybutton.id = "code-generate";
   copybutton.classList.add("send-button");
   if (div.parentNode.id == "first-line") {
@@ -79,7 +79,7 @@ generate.forEach((generate) => {
         });
 
       setTimeout(function () {
-        pressedButton.innerHTML = "📑";
+        pressedButton.innerHTML = "📑Copy";
       }, 1500);
     }
     generate_code();
@@ -749,10 +749,4 @@ const chars = {
     [6, 3],
     [6, 4],
   ],
-};
-
-const customChar = function (code) {
-  `byte customChar[] = {
-    ${code}
-};`;
 };

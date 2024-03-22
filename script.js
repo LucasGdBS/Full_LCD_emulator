@@ -41,8 +41,12 @@ button.forEach((botao) => {
       let buttonFather = pressedButton.parentNode;
       let input = buttonFather.querySelector("input");
 
+      let pixs = buttonFather.querySelectorAll('.dot-px').forEach((pix) => {
+        pix.classList.remove("high");
+      });
+
       chars[input.value].forEach((position) => {
-        let pixs = buttonFather.querySelectorAll(
+        pixs = buttonFather.querySelectorAll(
           `.dot-px[data-x='${position[0]}'][data-y='${position[1]}']`
         );
         pixs.forEach((pix) => {

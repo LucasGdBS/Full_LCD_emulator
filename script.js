@@ -45,7 +45,7 @@ button.forEach((botao) => {
         pix.classList.remove("high");
       });
 
-      chars[input.value].forEach((position) => {
+      chars[input.value.toUpperCase()].forEach((position) => {
         pixs = buttonFather.querySelectorAll(
           `.dot-px[data-x='${position[0]}'][data-y='${position[1]}']`
         );
@@ -59,8 +59,7 @@ button.forEach((botao) => {
 });
 
 const chars = {
-  ' ':
-  function () {
+  " ": function () {
     document.querySelectorAll(".dot-px").forEach((pix) => {
       pix.classList.remove("high");
     });

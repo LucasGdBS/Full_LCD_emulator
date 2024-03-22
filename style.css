@@ -1,3 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Altura total da página */
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -29,7 +40,8 @@ h1 {
   justify-content: space-around;
 }
 
-.pix-pic-box { /*Linhas do lcd*/
+.pix-pic-box {
+  /*Linhas do lcd*/
   align-items: center;
   display: flex;
   /*flex-wrap: wrap;*/
@@ -47,7 +59,7 @@ h1 {
   width: 90%;
 } */
 
-input{
+input {
   width: 100%;
   height: 20px;
   margin-right: 1px;
@@ -96,7 +108,7 @@ input{
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.send-button{
+.send-button {
   margin-top: 5px;
   margin-bottom: 5px;
   justify-content: center;
@@ -125,20 +137,35 @@ input{
   border-color: #022e5d;
 }
 
-:hover.send-button{
+:hover.send-button {
   color: #fff;
   background-color: #456a46;
-  border-color:  #456a46;
+  border-color: #456a46;
 }
 
-@media screen and (max-width: 1100px){
-  .button{
+@media screen and (max-width: 1100px) {
+  .button {
     font-size: 0.9rem;
   }
-  .send-button{
+  .send-button {
     font-size: 1rem;
   }
-  h1{
+  h1 {
     font-size: x-large;
   }
+}
+
+.footer {
+  background-color: #00695c;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-weight: bold;
+}
+
+.footer a {
+  color: #fff;
 }

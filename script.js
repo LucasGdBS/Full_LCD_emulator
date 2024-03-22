@@ -67,7 +67,7 @@ generate.forEach((generate) => {
         }
       });
 
-      code = code.slice(0, -1);
+      code = code.slice(0, -3);
 
       navigator.clipboard
         .writeText(`byte customChar[] = {\n  ${code}};`)

@@ -1,3 +1,19 @@
+// Adicionando botões de copy to clipboard
+const pixboxgreen = document.querySelectorAll(".pix-box");
+
+pixboxgreen.forEach((div) => {
+  let copybutton = document.createElement("button");
+  copybutton.innerHTML = "📑";
+  copybutton.id = "code-generate";
+  copybutton.classList.add("send-button");
+  copybutton.classList.add("copy-button");
+  if (div.parentNode.id == "first-line") {
+    div.insertBefore(copybutton, div.firstChild);
+  } else {
+    div.appendChild(copybutton);
+  }
+});
+
 // Marcar por click
 const pix = document.querySelectorAll(".dot-px");
 
@@ -27,6 +43,47 @@ turn_all_off.addEventListener("click", function () {
 toggle_all.addEventListener("click", function () {
   pix.forEach((pix) => {
     pix.classList.toggle("high");
+  });
+});
+
+// Gerar código
+const generate = document.querySelectorAll("#code-generate");
+
+generate.forEach((generate) => {
+  generate.addEventListener("click", function (event) {
+    const pressedButton = event.target;
+
+    function generate_code() {
+      let buttonFather = pressedButton.parentNode;
+      let dots = buttonFather.querySelectorAll(".dot-px");
+      let code = "B";
+      let i = 0;
+
+      dots.forEach((pix) => {
+        code += pix.classList.contains("high") ? "1" : "0";
+        i++;
+        if (i == 5) {
+          code += ",\n  B";
+          i = 0;
+        }
+      });
+
+      code = code.slice(0, -1);
+
+      navigator.clipboard
+        .writeText(`byte customChar[] = {\n  ${code}};`)
+        .then(function () {
+          pressedButton.innerHTML = "✅";
+        })
+        .catch(function () {
+          pressedButton.innerHTML = "❌";
+        });
+
+      setTimeout(function () {
+        pressedButton.innerHTML = "📑";
+      }, 1500);
+    }
+    generate_code();
   });
 });
 
@@ -90,11 +147,11 @@ const chars = {
     [0, 2],
     [1, 1],
     [1, 2],
-    [2, 2], // part of the top of the "A"
+    [2, 2],
     [3, 2],
     [4, 2],
     [5, 2],
-    [6, 1], // part of the bottom of the "A"
+    [6, 1],
     [6, 2],
     [6, 3],
   ],
@@ -693,4 +750,10 @@ const chars = {
     [6, 3],
     [6, 4],
   ],
+};
+
+const customChar = function (code) {
+  `byte customChar[] = {
+    ${code}
+};`;
 };

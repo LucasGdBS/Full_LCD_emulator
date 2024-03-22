@@ -132,6 +132,10 @@ input {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.copy-button {
+  margin-top: 0px;
+}
+
 :hover.button {
   color: #fff;
   background-color: #022e5d;

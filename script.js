@@ -113,6 +113,7 @@ button.forEach((botao) => {
           }
         }
       }
+      input.value = "";
     }
     apply_high();
   });

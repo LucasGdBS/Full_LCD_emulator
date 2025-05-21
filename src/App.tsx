@@ -1,5 +1,6 @@
 import { useState } from "react";
 import LcdCell from "./components/LcdCell";
+import Footer from "./components/Footer";
 
 export default function App() {
   const createEmptyCell = () =>
@@ -31,66 +32,77 @@ export default function App() {
   };
 
   return (
-    <main className="flex flex-col w-screen h-screen justify-center items-center overflow-hidden bg-neutral-400">
-      {/* Versão mobile: apenas 1 célula */}
-      <div className="block sm:hidden bg-lime-400 rounded-2xl p-4">
-        <LcdCell
-          pixels={allPixels[0]}
-          setPixels={(p) =>
-            setAllPixels((old) => {
-              const copy = [...old];
-              copy[0] = p;
-              return copy;
-            })
-          }
-        />
-      </div>
+    <div className="relative h-screen w-full bg-neutral-400 overflow-hidden">
+      <main className="flex flex-col w-full justify-center items-center py-10 px-4 bg-neutral-400 pb-24 gap-5 sm:gap-10">
+        <h1 className="text-3xl font-semibold text-green-950 text-center px-4">
+          LCD {window.innerWidth < 640 ? "1x1" : "16x2"} Emulator
+        </h1>
 
-      {/* Versão desktop: 16 colunas com 2 células cada */}
-      <div className="hidden sm:flex gap-2 bg-lime-400 px-4 py-8 rounded-2xl">
-        {Array.from({ length: 16 }).map((_, i) => (
-          <div key={i} className="flex flex-col gap-2">
-            {Array.from({ length: 2 }).map((_, j) => {
-              const index = i * 2 + j;
-              return (
-                <LcdCell
-                  key={j}
-                  reversed={j === 1}
-                  pixels={allPixels[index]}
-                  setPixels={(p) =>
-                    setAllPixels((old) => {
-                      const copy = [...old];
-                      copy[index] = p;
-                      return copy;
-                    })
-                  }
-                />
-              );
-            })}
+        {/* Versão mobile: apenas 1 célula */}
+        <div className="block sm:hidden bg-lime-400 rounded-2xl p-4 max-w-full">
+          <LcdCell
+            pixels={allPixels[0]}
+            setPixels={(p) =>
+              setAllPixels((old) => {
+                const copy = [...old];
+                copy[0] = p;
+                return copy;
+              })
+            }
+          />
+        </div>
+
+        {/* Versão desktop: 16 colunas com 2 células cada */}
+        <div className="hidden sm:flex flex-wrap justify-center gap-2 bg-lime-400 px-4 py-8 rounded-2xl overflow-x-auto max-w-full">
+          <div className="flex flex-nowrap gap-2 overflow-x-auto pb-2 max-w-full">
+            {Array.from({ length: 16 }).map((_, i) => (
+              <div key={i} className="flex flex-col gap-2 flex-shrink-0">
+                {Array.from({ length: 2 }).map((_, j) => {
+                  const index = i * 2 + j;
+                  return (
+                    <LcdCell
+                      key={j}
+                      reversed={j === 1}
+                      pixels={allPixels[index]}
+                      setPixels={(p) =>
+                        setAllPixels((old) => {
+                          const copy = [...old];
+                          copy[index] = p;
+                          return copy;
+                        })
+                      }
+                    />
+                  );
+                })}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
 
-      <div className="flex gap-2 justify-between items-center">
-        <button
-          onClick={ligarTodos}
-          className="mt-4 px-4 py-2 rounded bg-green-700 text-white cursor-pointer hover:bg-green-800"
-        >
-          Ligar Todos
-        </button>
-        <button
-          onClick={desligarTodos}
-          className="mt-4 px-4 py-2 rounded bg-green-700 text-white cursor-pointer hover:bg-green-800"
-        >
-          Desligar todos
-        </button>
-        <button
-          onClick={alternarTodos}
-          className="mt-4 px-4 py-2 rounded bg-green-700 text-white cursor-pointer hover:bg-green-800"
-        >
-          Alternar todos
-        </button>
-      </div>
-    </main>
+        <div className="flex gap-2 justify-center items-center w-full px-4">
+          <button
+            onClick={ligarTodos}
+            className="mt-2 px-4 py-2 rounded bg-green-700 text-white cursor-pointer hover:bg-green-800"
+          >
+            Ligar Todos
+          </button>
+          <button
+            onClick={desligarTodos}
+            className="mt-2 px-4 py-2 rounded bg-green-700 text-white cursor-pointer hover:bg-green-800"
+          >
+            Desligar todos
+          </button>
+          <button
+            onClick={alternarTodos}
+            className="mt-2 px-4 py-2 rounded bg-green-700 text-white cursor-pointer hover:bg-green-800"
+          >
+            Alternar todos
+          </button>
+        </div>
+      </main>
+      <footer className="fixed bottom-0 w-full hidden sm:block">
+        <Footer />
+      </footer>
+    </div>
   );
 }

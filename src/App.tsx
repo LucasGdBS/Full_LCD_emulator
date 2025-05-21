@@ -9,26 +9,55 @@ export default function App() {
   const [allPixels, setAllPixels] = useState<boolean[][][]>(
     Array.from({ length: 32 }, createEmptyCell)
   );
+  const [copied, setCopied] = useState(false);
 
-  const ligarTodos = () => {
+  const turnOnAllPixels = () => {
     const newPixels = allPixels.map((cell) =>
       cell.map((row) => row.map(() => true))
     );
     setAllPixels(newPixels);
   };
 
-  const desligarTodos = () => {
+  const turnOffAll = () => {
     const newPixels = allPixels.map((cell) =>
       cell.map((row) => row.map(() => false))
     );
     setAllPixels(newPixels);
   };
 
-  const alternarTodos = () => {
+  const toggleAllPixels = () => {
     const newPixels = allPixels.map((cell) =>
       cell.map((row) => row.map((bit) => !bit))
     );
     setAllPixels(newPixels);
+  };
+
+  const generateCCode = () => {
+    const linhaDeCima = [];
+    const linhaDeBaixo = [];
+
+    for (let i = 0; i < 16; i++) {
+      linhaDeCima.push(allPixels[i * 2]);
+      linhaDeBaixo.push(allPixels[i * 2 + 1]);
+    }
+
+    const todasCelulas = [...linhaDeCima, ...linhaDeBaixo];
+
+    return todasCelulas
+      .map((cell, index) => {
+        const bytes = cell.map(
+          (row) => "B" + row.map((pixel) => (pixel ? "1" : "0")).join("")
+        );
+        return `byte customChar${index}[] = {\n  ${bytes.join(",\n  ")}\n};`;
+      })
+      .join("\n\n");
+  };
+
+  const copyAllCells = async () => {
+    const codigo = generateCCode();
+    await navigator.clipboard.writeText(codigo);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -81,22 +110,28 @@ export default function App() {
 
         <div className="flex gap-2 justify-center items-center w-full px-4">
           <button
-            onClick={ligarTodos}
+            onClick={turnOnAllPixels}
             className="mt-2 px-4 py-2 rounded bg-green-700 text-white cursor-pointer hover:bg-green-800"
           >
             Ligar Todos
           </button>
           <button
-            onClick={desligarTodos}
+            onClick={turnOffAll}
             className="mt-2 px-4 py-2 rounded bg-green-700 text-white cursor-pointer hover:bg-green-800"
           >
             Desligar todos
           </button>
           <button
-            onClick={alternarTodos}
+            onClick={toggleAllPixels}
             className="mt-2 px-4 py-2 rounded bg-green-700 text-white cursor-pointer hover:bg-green-800"
           >
             Alternar todos
+          </button>
+          <button
+            onClick={copyAllCells}
+            className="mt-2 px-4 py-2 rounded bg-green-700 text-white font-semibold cursor-pointer hover:bg-emerald-800"
+          >
+            {copied ? "✅ Copiado!" : "Copiar tudo"}
           </button>
         </div>
       </main>

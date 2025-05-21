@@ -20,7 +20,11 @@ export default function LcdCell({ pixels, setPixels, reversed }: LcdCellProps) {
       setPixels(CHARS[char]);
       setInputValue("");
     } else {
-      setPixels(Array.from({ length: pixels.length }, () => Array(pixels[0].length).fill(false)))
+      setPixels(
+        Array.from({ length: pixels.length }, () =>
+          Array(pixels[0].length).fill(false)
+        )
+      );
     }
   };
 
@@ -28,7 +32,11 @@ export default function LcdCell({ pixels, setPixels, reversed }: LcdCellProps) {
 
   return (
     <>
-      <div className="flex flex-col items-center gap-2 w-fit sm:w-24">
+      <div
+        className={`flex flex-col items-center gap-2 w-fit sm:w-24 ${
+          inputValue.toLowerCase() === "spin" && "animate-spin"
+        }`}
+      >
         {!reversed && (
           <div className="flex flex-col gap-1">
             <button className="bg-green-950 w-full rounded-xl py-1 cursor-pointer text-white font-semibold hover:bg-emerald-900">
@@ -84,8 +92,22 @@ export default function LcdCell({ pixels, setPixels, reversed }: LcdCellProps) {
                   type="text"
                   className="px-2 py-1 rounded-md rounded-r-none border-2 border-green-800 bg-green-100 text-green-900 w-full"
                   placeholder="A"
+                  value={inputValue}
+                  onChange={(e) => {
+                    const char = e.target.value;
+                    setInputValue(char);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      handleSend(inputValue);
+                    }
+                  }}
                 />
-                <button className="bg-green-950 w-full rounded-xl rounded-l-none py-1 cursor-pointer hover:bg-emerald-900">
+                <button
+                  className="bg-green-950 w-full rounded-xl rounded-l-none py-1 cursor-pointer hover:bg-emerald-900"
+                  onClick={() => handleSend(inputValue)}
+                >
                   ⬆️
                 </button>
               </div>

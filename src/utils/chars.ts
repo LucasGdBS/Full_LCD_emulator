@@ -1,143 +1,4 @@
-// Adicionando botões de copy to clipboard
-const pixboxgreen = document.querySelectorAll(".pix-box");
-
-pixboxgreen.forEach((div) => {
-  let copybutton = document.createElement("button");
-  copybutton.innerHTML = "📑Copy";
-  copybutton.id = "code-generate";
-  copybutton.classList.add("send-button");
-  if (div.parentNode.id == "first-line") {
-    div.insertBefore(copybutton, div.firstChild);
-  } else {
-    div.appendChild(copybutton);
-  }
-});
-
-// Marcar por click
-const pix = document.querySelectorAll(".dot-px");
-
-pix.forEach((pix) => {
-  pix.addEventListener("click", function () {
-    this.classList.toggle("high");
-  });
-});
-
-// Marcar por botões
-const turn_all_on = document.querySelector("#turn_all_on");
-const turn_all_off = document.querySelector("#turn_all_off");
-const toggle_all = document.querySelector("#toggle_all");
-
-turn_all_on.addEventListener("click", function () {
-  pix.forEach((pix) => {
-    pix.classList.add("high");
-  });
-});
-
-turn_all_off.addEventListener("click", function () {
-  pix.forEach((pix) => {
-    pix.classList.remove("high");
-  });
-});
-
-toggle_all.addEventListener("click", function () {
-  pix.forEach((pix) => {
-    pix.classList.toggle("high");
-  });
-});
-
-// Gerar código
-const generate = document.querySelectorAll("#code-generate");
-
-generate.forEach((generate) => {
-  generate.addEventListener("click", function (event) {
-    const pressedButton = event.target;
-
-    function generate_code() {
-      let buttonFather = pressedButton.parentNode;
-      let dots = buttonFather.querySelectorAll(".dot-px");
-      let code = "B";
-      let i = 0;
-
-      dots.forEach((pix) => {
-        code += pix.classList.contains("high") ? "1" : "0";
-        i++;
-        if (i == 5) {
-          code += ",\n  B";
-          i = 0;
-        }
-      });
-
-      code = code.slice(0, -3);
-
-      navigator.clipboard
-        .writeText(`byte customChar[] = {\n  ${code}};`)
-        .then(function () {
-          pressedButton.innerHTML = "✅";
-        })
-        .catch(function () {
-          pressedButton.innerHTML = "❌";
-        });
-
-      setTimeout(function () {
-        pressedButton.innerHTML = "📑Copy";
-      }, 1500);
-    }
-    generate_code();
-  });
-});
-
-// Aplicar Letras
-const button = document.querySelectorAll("#apply");
-
-button.forEach((botao) => {
-  botao.addEventListener("click", function (event) {
-    const pressedButton = event.target;
-
-    function apply_high() {
-      let buttonFather = pressedButton.parentNode;
-      let input = buttonFather.querySelector("input");
-
-      let pixs = buttonFather.querySelectorAll(".dot-px");
-
-      pixs.forEach((pix) => {
-        pix.classList.remove("high");
-      });
-
-      const charMap = chars[input.value];
-      if (charMap) {
-        for (let i = 0; i < charMap.length; i++) {
-          for (let j = 0; j < charMap[i].length; j++) {
-            if (charMap[i][j] === 1) {
-              pixs[i * charMap[i].length + j].classList.add("high");
-            }
-          }
-        }
-      }
-      input.value = "";
-    }
-    apply_high();
-  });
-});
-
-// Aplicar Letras com Enter
-const input = document.querySelectorAll("input");
-
-input.forEach((input) => {
-  input.addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-      let buttonFather = input.parentNode;
-      buttonFather.querySelector("#apply").click();
-    }
-  });
-});
-
-const chars = {
-  " ": function () {
-    document.querySelectorAll(".dot-px").forEach((pix) => {
-      pix.classList.remove("high");
-    });
-  },
-
+export const CHARS: Record<string, boolean[][]> = {
   ";": [
     [0, 0, 0, 0, 0],
     [0, 1, 1, 0, 0],
@@ -147,8 +8,7 @@ const chars = {
     [0, 0, 1, 0, 0],
     [0, 1, 0, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   0: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -158,7 +18,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
+  ].map((row) => row.map(Boolean)),  
   1: [
     [0, 0, 1, 0, 0],
     [0, 1, 1, 0, 0],
@@ -168,8 +28,7 @@ const chars = {
     [0, 0, 1, 0, 0],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   2: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -179,8 +38,7 @@ const chars = {
     [0, 1, 0, 0, 0],
     [1, 1, 1, 1, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   3: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -190,8 +48,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   4: [
     [0, 0, 0, 1, 0],
     [0, 0, 1, 1, 0],
@@ -201,8 +58,7 @@ const chars = {
     [0, 0, 0, 1, 0],
     [0, 0, 0, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   5: [
     [1, 1, 1, 1, 1],
     [1, 0, 0, 0, 0],
@@ -212,8 +68,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   6: [
     [0, 0, 1, 1, 0],
     [0, 1, 0, 0, 0],
@@ -223,8 +78,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   7: [
     [1, 1, 1, 1, 1],
     [0, 0, 0, 0, 1],
@@ -234,8 +88,7 @@ const chars = {
     [0, 1, 0, 0, 0],
     [0, 1, 0, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   8: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -245,8 +98,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   9: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -256,8 +108,7 @@ const chars = {
     [0, 0, 0, 1, 0],
     [0, 1, 1, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   A: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -267,8 +118,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   B: [
     [1, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -278,8 +128,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   C: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -289,8 +138,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   D: [
     [1, 1, 1, 0, 0],
     [1, 0, 0, 1, 0],
@@ -300,8 +148,7 @@ const chars = {
     [1, 0, 0, 1, 0],
     [1, 1, 1, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   E: [
     [1, 1, 1, 1, 1],
     [1, 0, 0, 0, 0],
@@ -311,8 +158,7 @@ const chars = {
     [1, 0, 0, 0, 0],
     [1, 1, 1, 1, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   F: [
     [1, 1, 1, 1, 1],
     [1, 0, 0, 0, 0],
@@ -322,8 +168,7 @@ const chars = {
     [1, 0, 0, 0, 0],
     [1, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   G: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -333,8 +178,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   H: [
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
@@ -344,8 +188,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   I: [
     [0, 1, 1, 1, 0],
     [0, 0, 1, 0, 0],
@@ -355,8 +198,7 @@ const chars = {
     [0, 0, 1, 0, 0],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   J: [
     [0, 0, 0, 1, 0],
     [0, 0, 0, 1, 0],
@@ -366,8 +208,7 @@ const chars = {
     [1, 0, 0, 1, 0],
     [0, 1, 1, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   K: [
     [1, 0, 0, 0, 1],
     [1, 0, 0, 1, 0],
@@ -377,8 +218,7 @@ const chars = {
     [1, 0, 0, 1, 0],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   L: [
     [1, 0, 0, 0, 0],
     [1, 0, 0, 0, 0],
@@ -388,8 +228,7 @@ const chars = {
     [1, 0, 0, 0, 0],
     [1, 1, 1, 1, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   M: [
     [1, 0, 0, 0, 1],
     [1, 1, 0, 1, 1],
@@ -399,8 +238,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   N: [
     [1, 0, 0, 0, 1],
     [1, 1, 0, 0, 1],
@@ -410,8 +248,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   O: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -421,8 +258,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   P: [
     [1, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -432,8 +268,7 @@ const chars = {
     [1, 0, 0, 0, 0],
     [1, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   Q: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -443,8 +278,7 @@ const chars = {
     [1, 0, 0, 1, 1],
     [0, 1, 1, 1, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   R: [
     [1, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -454,8 +288,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   S: [
     [0, 1, 1, 1, 0],
     [1, 0, 0, 0, 1],
@@ -465,8 +298,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   T: [
     [1, 1, 1, 1, 1],
     [0, 0, 1, 0, 0],
@@ -476,8 +308,7 @@ const chars = {
     [0, 0, 1, 0, 0],
     [0, 0, 1, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   U: [
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
@@ -487,8 +318,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   V: [
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
@@ -498,8 +328,7 @@ const chars = {
     [0, 1, 0, 1, 0],
     [0, 0, 1, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   W: [
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
@@ -509,8 +338,7 @@ const chars = {
     [1, 1, 0, 1, 1],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   X: [
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
@@ -520,8 +348,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   Y: [
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
@@ -531,8 +358,7 @@ const chars = {
     [0, 0, 1, 0, 0],
     [0, 0, 1, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   Z: [
     [1, 1, 1, 1, 1],
     [0, 0, 0, 0, 1],
@@ -542,8 +368,7 @@ const chars = {
     [1, 0, 0, 0, 0],
     [1, 1, 1, 1, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   a: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -553,8 +378,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   b: [
     [1, 0, 0, 0, 0],
     [1, 0, 0, 0, 0],
@@ -564,8 +388,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-  c: [
+  ].map((row) => row.map(Boolean)),  c: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
     [0, 1, 1, 1, 0],
@@ -574,8 +397,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-  d: [
+  ].map((row) => row.map(Boolean)),  d: [
     [0, 0, 0, 0, 1],
     [0, 0, 0, 0, 1],
     [0, 1, 1, 0, 1],
@@ -584,8 +406,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   e: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -595,8 +416,7 @@ const chars = {
     [1, 0, 0, 0, 0],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   f: [
     [0, 0, 1, 1, 0],
     [0, 1, 0, 0, 1],
@@ -606,8 +426,7 @@ const chars = {
     [0, 1, 0, 0, 0],
     [0, 1, 0, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   g: [
     [0, 0, 0, 0, 0],
     [0, 1, 1, 1, 1],
@@ -617,8 +436,7 @@ const chars = {
     [0, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   h: [
     [1, 0, 0, 0, 0],
     [1, 0, 0, 0, 0],
@@ -628,8 +446,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   i: [
     [0, 0, 1, 0, 0],
     [0, 0, 0, 0, 0],
@@ -639,8 +456,7 @@ const chars = {
     [0, 0, 1, 0, 0],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   j: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 1, 0],
@@ -650,8 +466,7 @@ const chars = {
     [1, 0, 0, 1, 0],
     [0, 1, 1, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   k: [
     [1, 0, 0, 0, 0],
     [1, 0, 0, 0, 0],
@@ -661,8 +476,7 @@ const chars = {
     [1, 0, 1, 0, 0],
     [1, 0, 0, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   l: [
     [0, 1, 1, 0, 0],
     [0, 0, 1, 0, 0],
@@ -672,8 +486,7 @@ const chars = {
     [0, 0, 1, 0, 0],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   m: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -683,8 +496,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   n: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -694,8 +506,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   o: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -705,8 +516,7 @@ const chars = {
     [1, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   p: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -716,8 +526,7 @@ const chars = {
     [1, 0, 0, 0, 0],
     [1, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   q: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -727,8 +536,7 @@ const chars = {
     [0, 0, 0, 0, 1],
     [0, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   r: [
     [0, 0, 0, 0, 0],
     [1, 0, 1, 1, 0],
@@ -738,8 +546,7 @@ const chars = {
     [1, 0, 0, 0, 0],
     [1, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   s: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -749,8 +556,7 @@ const chars = {
     [0, 0, 0, 0, 1],
     [1, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   t: [
     [0, 1, 0, 0, 0],
     [0, 1, 0, 0, 0],
@@ -760,8 +566,7 @@ const chars = {
     [0, 1, 0, 0, 1],
     [0, 0, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   u: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -771,8 +576,7 @@ const chars = {
     [1, 0, 0, 1, 1],
     [0, 1, 1, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   v: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -782,8 +586,7 @@ const chars = {
     [0, 1, 0, 1, 0],
     [0, 0, 1, 0, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   w: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -793,8 +596,7 @@ const chars = {
     [1, 0, 1, 0, 1],
     [0, 1, 0, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   x: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -804,8 +606,7 @@ const chars = {
     [0, 1, 0, 1, 0],
     [1, 0, 0, 0, 1],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   y: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -815,8 +616,7 @@ const chars = {
     [0, 0, 0, 0, 1],
     [0, 1, 1, 1, 0],
     [0, 0, 0, 0, 0],
-  ],
-
+  ].map((row) => row.map(Boolean)),
   z: [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
@@ -826,5 +626,4 @@ const chars = {
     [0, 1, 0, 0, 0],
     [1, 1, 1, 1, 1],
     [0, 0, 0, 0, 0],
-  ],
-};
+  ].map((row) => row.map(Boolean)),};

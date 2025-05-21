@@ -8,6 +8,9 @@ interface LcdCellProps {
 }
 
 export default function LcdCell({ pixels, setPixels, reversed }: LcdCellProps) {
+  const [inputValue, setInputValue] = useState("");
+  const [copied, setCopied] = useState(false);
+
   const handleClick = (row: number, col: number) => {
     const copy = [...pixels];
     copy[row] = [...copy[row]];
@@ -28,7 +31,22 @@ export default function LcdCell({ pixels, setPixels, reversed }: LcdCellProps) {
     }
   };
 
-  const [inputValue, setInputValue] = useState("");
+  function generateCCode(pixels: boolean[][]): string {
+    const linhas = pixels.map((linha) => {
+      const bits = linha.map((pixel) => (pixel ? "1" : "0")).join("");
+      return `  B${bits},`;
+    });
+
+    return `byte customChar[] = {\n${linhas.join("\n")}\n};`;
+  }
+
+  const copyToClipboard = () => {
+    const codigo = generateCCode(pixels);
+    navigator.clipboard.writeText(codigo).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   return (
     <>
@@ -39,8 +57,11 @@ export default function LcdCell({ pixels, setPixels, reversed }: LcdCellProps) {
       >
         {!reversed && (
           <div className="flex flex-col gap-1">
-            <button className="bg-green-950 w-full rounded-xl py-1 cursor-pointer text-white font-semibold hover:bg-emerald-900">
-              📑 Copy
+            <button
+              className="bg-green-950 w-full rounded-xl py-1 cursor-pointer text-white font-semibold hover:bg-emerald-900"
+              onClick={copyToClipboard}
+            >
+              {copied ? "✅ Copiado!" : "📑 Copy"}
             </button>
             <div className="flex">
               <input
@@ -111,8 +132,11 @@ export default function LcdCell({ pixels, setPixels, reversed }: LcdCellProps) {
                   ⬆️
                 </button>
               </div>
-              <button className="bg-green-950 w-full rounded-xl py-1 cursor-pointer text-white font-semibold hover:bg-emerald-900">
-                📑 Copy
+              <button
+                className="bg-green-950 w-full rounded-xl py-1 cursor-pointer text-white font-semibold hover:bg-emerald-900"
+                onClick={copyToClipboard}
+              >
+                {copied ? "✅ Copiado!" : "📑 Copy"}
               </button>
             </div>
           </div>

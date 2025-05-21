@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { CHARS } from "../utils/chars";
+
 interface LcdCellProps {
   pixels: boolean[][];
   setPixels: (newPixels: boolean[][]) => void;
@@ -12,6 +15,17 @@ export default function LcdCell({ pixels, setPixels, reversed }: LcdCellProps) {
     setPixels(copy);
   };
 
+  const handleSend = (char: string) => {
+    if (char.length === 1 && CHARS[char]) {
+      setPixels(CHARS[char]);
+      setInputValue("");
+    } else {
+      setPixels(Array.from({ length: pixels.length }, () => Array(pixels[0].length).fill(false)))
+    }
+  };
+
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <>
       <div className="flex flex-col items-center gap-2 w-fit sm:w-24">
@@ -25,8 +39,22 @@ export default function LcdCell({ pixels, setPixels, reversed }: LcdCellProps) {
                 type="text"
                 className="px-2 py-1 rounded-md rounded-r-none border-2 border-green-800 bg-green-100 text-green-900 w-full"
                 placeholder="A"
+                value={inputValue}
+                onChange={(e) => {
+                  const char = e.target.value;
+                  setInputValue(char);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    handleSend(inputValue);
+                  }
+                }}
               />
-              <button className="bg-green-950 w-full rounded-xl rounded-l-none py-1 cursor-pointer hover:bg-emerald-900">
+              <button
+                className="bg-green-950 w-full rounded-xl rounded-l-none py-1 cursor-pointer hover:bg-emerald-900"
+                onClick={() => handleSend(inputValue)}
+              >
                 ⬇️
               </button>
             </div>
@@ -39,8 +67,8 @@ export default function LcdCell({ pixels, setPixels, reversed }: LcdCellProps) {
                 <div
                   key={col}
                   onClick={() => handleClick(row, col)}
-                  className={`border-2 rounded-md cursor-pointer
-                ${isOn ? "bg-lime-950" : "bg-lime-400"}
+                  className={`border-2 border-green-800 rounded-md cursor-pointer
+                ${isOn ? "bg-lime-950 border-lime-950" : "bg-lime-400"}
                 w-10 h-10 sm:w-4 sm:h-4
                 `}
                 ></div>

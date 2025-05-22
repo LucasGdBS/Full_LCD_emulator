@@ -61,9 +61,9 @@ export default function App() {
   };
 
   return (
-    <div className="relative h-screen w-full bg-neutral-400 overflow-hidden">
-      <main className="flex flex-col w-full justify-center items-center py-10 px-4 bg-neutral-400 pb-24 gap-5 sm:gap-10">
-        <h1 className="text-3xl font-semibold text-green-950 text-center px-4">
+    <div className="relative h-screen w-full bg-neutral-900 overflow-hidden">
+      <main className="flex flex-col w-full justify-center items-center py-10 px-4 pb-24 gap-5 sm:gap-10">
+        <h1 className="text-3xl font-semibold text-green-600 text-center px-4">
           LCD {window.innerWidth < 640 ? "1x1" : "16x2"} Emulator
         </h1>
 
@@ -129,7 +129,7 @@ export default function App() {
           </button>
           <button
             onClick={copyAllCells}
-            className="mt-2 px-4 py-2 rounded bg-green-700 text-white font-semibold cursor-pointer hover:bg-emerald-800"
+            className="mt-2 px-4 py-2 rounded bg-green-700 text-white font-semibold cursor-pointer hover:bg-emerald-800 hidden sm:block"
           >
             {copied ? "✅ Copiado!" : "Copiar tudo"}
           </button>
